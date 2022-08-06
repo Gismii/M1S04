@@ -1,14 +1,11 @@
 import java.util.*;
 
-import static javax.swing.UIManager.get;
-
 public class SistemaMatricula {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         int vagas = 40;
-        List<String> nomes = new ArrayList<>();
-        String informandoVagas;
+        Set<String> nomes = new HashSet<>();
         int num;
 
 
@@ -27,18 +24,29 @@ public class SistemaMatricula {
 
                     }
                     vagas--;
-                    if (vagas > 0 && vagas<40) {
+                    if (vagas > 0 && vagas < 40) {
                         System.out.println("Matricula realizada com sucesso!!");
                         System.out.println("Restam: " + vagas + "vagas. ");
                         System.out.println("                                 ");
-                    }else {
+                    } else {
                         System.out.println("Infelizmente não temos mais vagas, " +
                                 "mas fique de olho em nosso site para a abertura de novas turmas.");
                     }
                 case 2:
-                    System.out.println("Vagas disponiveis: "+ vagas);
+                    if (num == 2) {
+                        System.out.println("Vagas disponiveis: " + vagas);
+                    }
+
+                case 3:
+
+                    if (num == 3) {
+
+                        System.out.println("Nome dos matriculados: " + nomes);
+                    }
             }
 
-        }while (num!=4) ;
+        }while (num!=4);
+
+
     }
 }
